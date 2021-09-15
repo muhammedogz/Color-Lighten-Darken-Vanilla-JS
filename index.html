@@ -24,7 +24,8 @@
         <form action="#">
             <div>
                 <label for="input-color">Input Color (hex)</label>
-                <input type="text" name="input-color" id="input-color" placeholder="#000000">
+                <input type="text" name="input-color" id="input-color" placeholder="#000000"
+                    pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$">
             </div>
 
             <div>
@@ -40,9 +41,11 @@
         </form>
         <div class="output">
             <p>Input Color</p>
-            <div class="box input-box"></div>
+            <div class="box" id="input-box">
+                <p class="hidden" id="invalid-color">Invalid Color</p>
+            </div>
             <p>Altered Color</p>
-            <div class="box altered-box"></div>
+            <div class="box" id="altered-box"></div>
         </div>
     </div>
 
