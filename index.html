@@ -13,6 +13,35 @@
 
 <body>
 
+    <div class="container">
+        <header>
+            <h1>Awesome Color Tool</h1>
+        </header>
+
+        <form action="#">
+            <div>
+                <label for="input-color">Input Color (hex)</label>
+                <input type="text" name="input-color" id="input-color">
+            </div>
+
+            <div>
+                <label for="light-dark">Lighten</label>
+                <input type="checkbox" id="light-dark">
+                <label for="light-dark">Darken</label>
+            </div>
+
+            <div>
+                <label for="range">0%</label>
+                <input type="range" name="range" id="range">
+            </div>
+        </form>
+        <div class="output">
+            <p>Input Color</p>
+            <div class="box input-box"></div>
+            <p>Altered Color</p>
+            <div class="box altered-box"></div>
+        </div>
+    </div>
 
     <script src="js/index.js"></script>
 </body>
