@@ -16,16 +16,34 @@ html {
 }
 
 body {
-	margin: 0;
+	font-family: "Azeret Mono", monospace;
 	background-color: var(--color-bg);
 
 	display: flex;
 }
 
 h1,
-form {
+body,
+form,
+p {
 	margin: 0;
 	padding: 0;
+}
+
+/* typography */
+
+h1 {
+	font-weight: 700;
+	font-size: clamp(1.6rem, 0.5rem + 3vw, 3.3rem);
+}
+
+p {
+	font-weight: 400;
+	font-size: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+}
+
+input {
+	font-style: inherit;
 }
 
 /* layout */
@@ -73,4 +91,9 @@ input[type="checkbox"] {
 	height: 10em;
 
 	border: 2px solid var(--color-black);
+}
+
+.output p,
+.output div {
+	margin-bottom: 0.5em;
 }
