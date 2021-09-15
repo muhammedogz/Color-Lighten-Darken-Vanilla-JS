@@ -108,6 +108,10 @@ input[type="checkbox"] {
 	color: #ffffff59;
 }
 
+.box {
+	filter: brightness(100%);
+}
+
 .hidden {
 	display: none;
 }
