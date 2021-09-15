@@ -35,8 +35,9 @@
             </div>
 
             <div>
-                <label for="range">0%</label>
-                <input type="range" name="range" id="range" min="0" max="100" value="0">
+                <label for="range" id="range-value">0%</label>
+                <input type="range" name="range" id="range" min="0" max="100" value="0" step="1"
+                    oninput="updateRangeValue(this.value); updateOutputColor(this.value)" disabled>
             </div>
         </form>
         <div class="output">

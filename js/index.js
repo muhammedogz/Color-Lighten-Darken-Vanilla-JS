@@ -2,18 +2,21 @@ const hexInput = document.getElementById("input-color");
 const inputColor = document.getElementById("input-box");
 const invalidCol = document.getElementById("invalid-color");
 
+const rangeVal = document.getElementById("range-value");
+const rangeInput = document.getElementById("range");
+
 hexInput.addEventListener("input", () => {
     const value = checkValidHex(hexInput.value);
     if (value) {
         let hex = hexInput.value;
-        if (hex[0] !== "#")
-            hex = "#" + hex;
-        inputColor.style.backgroundColor = hex;
-        invalidCol.classList.add("hidden");
+        setColor(inputColor, hex);
+
+        validHex();
     }
     else {
-        invalidCol.classList.remove("hidden");
-        inputColor.style.backgroundColor = "";
+        clearColor(inputColor);
+
+        invalidHex();
     }
 });
 
@@ -41,6 +44,36 @@ function checkValidHex(num) {
     }
 
     return isValid;   
+}
+
+
+function updateRangeValue(val) {
+    rangeVal.innerText =  val + "%";
+}
+
+// helper function 
+function setColor(element, hex) {
+    if (hex[0] !== "#")
+            hex = "#" + hex;
+    element.style.backgroundColor = hex;
+}
+
+function clearColor(element) {
+    element.style.backgroundColor = "";
+}
+
+function validHex() {
+    rangeInput.disabled = false;
+    invalidCol.classList.add("hidden");
+}
+
+function invalidHex() {
+    rangeInput.disabled = true;
+
+    rangeInput.value = 0;
+    updateRangeValue(0);
+
+    invalidCol.classList.remove("hidden");
 }
 
 
