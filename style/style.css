@@ -1,8 +1,76 @@
+:root {
+	--color-white: #fff;
+	--color-black: #000;
+	--color-bg: #186187;
+	--color-border: #186464;
+}
+
 * {
 	box-sizing: border-box;
 }
 
+body,
+html {
+	height: 100vh;
+	overflow: hidden;
+}
+
 body {
 	margin: 0;
-	background-color: purple;
+	background-color: var(--color-bg);
+
+	display: flex;
+}
+
+h1,
+form {
+	margin: 0;
+	padding: 0;
+}
+
+/* layout */
+
+.container {
+	padding: 2em;
+	margin: auto;
+
+	width: 85%;
+	max-width: 900px;
+
+	color: var(--color-white);
+
+	border: 2px solid var(--color-border);
+}
+
+/* form */
+
+form div {
+	display: flex;
+	flex-direction: column;
+
+	margin-block: 2em;
+}
+
+form div:nth-child(2) {
+	flex-direction: row;
+}
+
+input[type="text"],
+input[type="range"] {
+	margin-top: 0.7em;
+	width: 50%;
+}
+
+input[type="checkbox"] {
+	display: block;
+	margin-inline: 2em;
+}
+
+/* box */
+
+.box {
+	width: 100%;
+	height: 10em;
+
+	border: 2px solid var(--color-black);
 }
