@@ -68,15 +68,11 @@ header {
 
 /* form */
 
-form div {
+form > div {
 	display: flex;
 	flex-direction: column;
 
 	margin-block: 2em;
-}
-
-form div:nth-child(2) {
-	flex-direction: row;
 }
 
 input[type="text"],
@@ -88,6 +84,48 @@ input[type="range"] {
 input[type="checkbox"] {
 	display: block;
 	margin-inline: 2em;
+}
+
+/* lighten darken box */
+
+.toggle {
+	display: flex;
+	flex-direction: row;
+
+	align-items: center;
+	text-align: center;
+
+	gap: 1em;
+}
+
+.toggle-btn {
+	width: 4em;
+	height: 2em;
+
+	padding: 0.5em 0.3em;
+
+	background-color: rgb(190, 92, 92);
+	border-radius: 1em;
+
+	cursor: pointer;
+}
+
+.inner-circle {
+	width: 2em;
+	height: 1em;
+
+	background-color: #eeeaea;
+	border-radius: 2em;
+
+	transition: all 250ms;
+}
+
+.toggle-btn.toggled > .inner-circle {
+	transform: translateX(1.5em);
+}
+
+.unselected {
+	opacity: 0.3;
 }
 
 /* box */

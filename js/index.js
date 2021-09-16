@@ -9,7 +9,27 @@ const rangeInput = document.getElementById("range");
 const inputInfo = document.getElementById("input-info");
 const outputInfo = document.getElementById("output-info");
 
+const toggleBtn = document.getElementById("toggleBtn");
+const lightenText = document.getElementById("lightenText");
+const darkenText = document.getElementById("darkenText");
+
 let lighten = true;
+
+toggleBtn.addEventListener("click", () => {
+    if (lighten) {
+        toggleBtn.classList.add("toggled");
+        lighten = false;
+        lightenText.classList.add("unselected");
+        darkenText.classList.remove("unselected");
+    }
+    else {
+        toggleBtn.classList.remove("toggled");
+        lighten = true;
+        lightenText.classList.remove("unselected");
+        darkenText.classList.add("unselected");
+    }
+});
+
 
 hexInput.addEventListener("input", () => {
     const value = checkValidHex(hexInput.value);
